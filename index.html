@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic</title>
+</head>
+<style>
+    
+    *{
+        color:white;
+        background-color:#141414;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    #tap-tap{
+        background-color: red;
+        color: white;
+        border: 0;
+        border-radius: 3em;
+    }
+    #tap-tap:hover{
+        background-color:blue ;
+    }
+
+    #clock{
+        position: relative;
+        margin: auto;
+        height: 10em;
+        width: 20em;
+        background-color: white;
+        border: 1px solid white;
+        color: red;
+        display:flex;
+        flex-direction: row;
+        padding-bottom: 3em;
+    }
+    #clock:hover{
+        height: 11em;
+        width: 22em;
+
+    }
+    .unitname{
+        border: 1px solid white;
+        width: 6em;
+        margin: 0.3em;
+        color: white;
+        font-size: 3em;
+        border-radius: 10%;    
+    }
+    .unitname:hover{
+        color: red;
+        cursor: grab;
+        border-radius: 50%;
+        width: 15em;
+        transition: 0.3s;
+    }
+    #heading{
+        padding: 2em;
+        margin-top: 0;
+        color: #141414;
+    }
+    #heading:hover{
+        background-color: red;
+
+    }
+    #clock-heading{
+        color: coral;
+        cursor:grab;
+        margin: 1em;
+    }
+
+
+    #clock:hover{
+        background-color: aquamarine;
+        box-shadow: 1px 1px 8px 8px chartreuse;
+    }
+    #taptime{
+        color: white;
+        background-color: red;
+        border-radius: 50%;
+        height: 5em;
+        width: 5em;
+        margin: 1.5em;
+    }
+    #taptime:hover{
+        background-color: chartreuse;
+        color: white;
+        box-shadow: 1px 1px 4px 4px white;
+    }
+    #navbar{
+        background-color:#ff5733;
+        padding: 1em;
+    }
+    .options{
+        text-decoration: none;
+        background-color:#ff5733;
+        margin: 1em;
+    }
+    .options:hover{
+        color: aquamarine;
+        font-size: 1.2em;
+        transition: 0.2s;
+        
+    }
+    #pagename{
+        background-color: aquamarine;
+        padding: 1em;
+        margin: 0;
+    }
+    #colorchange{
+        border: 1em solid white;
+        background-color: white;
+    }
+    #user-input{
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        border-radius: 3em;
+    }
+    #input:hover{
+        background-color: red;   
+    }
+    #label{
+        background-color: white;
+        color: black;
+    }
+    
+    #units{
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .unit{
+        align-items: center;
+    }
+    .calc{
+        color: #141414;
+        background-color: white;
+        width: 3em;
+    }
+    #jsPlay{
+        margin: 0;
+        border: 3em solid white;
+        
+    }
+    #mathArea{
+        padding: 1em;
+        display: grid;
+        grid-template:4em/auto auto; 
+        row-gap: 2em;
+    }
+    .cal-box{
+        margin:2em 1em;
+    }
+    #mathHeading{
+        margin: 1em;
+        color: coral;
+    }
+    #calculate{
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    margin: 1.5em;
+}
+#tablearea{
+    display:inline-flex;
+    flex-direction: row;
+}
+input{
+    margin: 1em ;
+    color: black;
+    background-color: white;
+}
+#table{
+    margin: 2em;
+}
+#input-table{
+    margin: 2em;
+}
+#tableDisplay{
+    margin: 0.7em;
+    color:white;
+    border: 1px solid white;
+    width: 20em;
+    height: em;
+
+}
+
+#findTable{
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    margin: 1.5em;   
+}
+
+
+
+</style>
+<body>
+    <!-- Page Navbar  -->
+    <header id="main-heading">
+        <nav id="navbar">
+            
+            <a href="#Home" class="options">Home</a>
+            <a href="#Contents" class="options">Contents</a>
+            <a href="#Functions" class="options">Functions</a>
+            <a href="#About" class="options">About</a>
+        </nav>
+        <h1 id="pagename">A Page of Complexity</h1>
+    </header>
+    <!-- Color Change Function  -->
+    <div id="colorchange">
+
+        <div id="input">
+            
+            <br>
+            <input type="text" id="user-input" placeholder="Your Good Name?">
+        </div>
+        <h3 id="heading">1.TURN ME BLUE</h3>
+        <marquee behavior="alternate" width="100vw" direction="random">
+            
+            <button id="tap-tap">TAP HERE</button>
+        </marquee>
+        <!-- MAgic Clock  -->
+    </div id="clock-container">
+        <h2 id="clock-heading">2. A MAGIC CLOCK</h2>
+       
+        <div id="clock">
+            <div id="hour" class="unitname">H</div>
+            <div id="minute" class="unitname">M</div>
+            <div id="second" class="unitname">S</div>    
+        </div>
+    </div>
+    <button onclick="startTime()" id="taptime">Tap to Show</button>
+
+    <!-- Math Ground  -->
+    <div id="jsPlay">
+        <h1 id="mathHeading">3. MATHS GROUND</h1>
+        <div id="mathArea">
+            <div class="cal-box">
+                <h3>Additon</h3>
+                <br>
+                <label for="">
+    
+                    <input id="numOneA" class="calc" type="number"> +
+                    <input id="numTwoA" class="calc" type="number"> =
+                    <input id="resultA" class="calc" type="number" disabled>
+                </label>
+
+            </div>
+            <div class="cal-box">
+                <h3>Subtraction</h3>
+                <br>
+                <label for="">
+    
+                    <input id="numOneS" class="calc" type="number"> -
+                    <input id="numTwoS" class="calc" type="number"> =
+                    <input id="resultS" class="calc" type="number" disabled>
+                </label>
+
+            </div>
+            <div class="cal-box">
+                <h3>Multiplication</h3>
+                <br>
+                <label for="">
+    
+                    <input id="numOneM" class="calc" type="number"> *
+                    <input id="numTwoM" class="calc" type="number"> =
+                    <input id="resultM" class="calc" type="number" disabled>
+                </label>
+
+            </div>
+            <div class="cal-box">
+                <h3>Division</h3>
+                <br>
+                <label for="">
+    
+                    <input id="numOneD" class="calc" type="number"> /
+                    <input id="numTwoD" class="calc" type="number"> =
+                    <input id="resultD" class="calc" type="number" disabled>
+                </label>
+
+            </div>
+            
+            <br>
+            <br>
+        </div>
+        <button id="calculate" onclick="calc()">Calculate</button>
+    </div>
+    <!-- table -->
+    <div id="table">
+        <h1>Put a Number and get Table</h1>
+        <div id="tablearea">
+            
+            <div id="input-table">Table of<input id="tableNumber" placeholder="which table??" type="number"></div>
+            <div id="tableDisplay"></div>
+        </div>
+        <div>
+            <button id="findTable" onclick="Table()">Find Table</button>
+
+        </div>
+        <div id="EMContainer">
+
+        </div>
+    </div>
+    <script>
+        //for bg change
+        document.getElementById('tap-tap').addEventListener('click',text=()=>{
+            document.getElementById('heading').style.background='aquamarine';
+            document.getElementById('input').style.background='aquamarine';
+            let userName=document.getElementById('user-input').value;
+            document.getElementById('heading').innerText="Welcome "+userName+" :)";
+        })
+        //for magic clock
+        function startTime(){
+            const today= new Date();
+            let h=today.getHours();
+            let m=today.getMinutes();
+            let s=today.getSeconds();
+            document.getElementById('hour').innerHTML=h;
+            document.getElementById('minute').innerHTML=m;
+            document.getElementById('second').innerHTML=s;
+            document.getElementById('clock').style.background="chartreuse"
+            setTimeout(startTime,1000)
+        }
+        const calc=()=>{
+            // Addition
+            let numOneA= document.getElementById('numOneA').value;
+            let numTwoA= document.getElementById('numTwoA').value;
+            numOneA=Number(numOneA);
+            numTwoA=Number(numTwoA);
+            let resultA=numOneA+numTwoA;
+            document.getElementById("resultA").value=resultA;
+            // Subtraction
+            let numOneS= document.getElementById('numOneS').value;
+            let numTwoS= document.getElementById('numTwoS').value;
+            numOneS=Number(numOneS);
+            numTwoS=Number(numTwoS);
+            let resultS=numOneS-numTwoS;
+            document.getElementById("resultS").value=resultS;
+            // Multiplication
+            let numOneM= document.getElementById('numOneM').value;
+            let numTwoM= document.getElementById('numTwoM').value;
+            numOneM=Number(numOneM);
+            numTwoM=Number(numTwoM);
+            let resultM=numOneM*numTwoM;
+            document.getElementById("resultM").value=resultM;
+            // Division
+            let numOneD= document.getElementById('numOneD').value;
+            let numTwoD= document.getElementById('numTwoD').value;
+            numOneD=Number(numOneD);
+            numTwoD=Number(numTwoD);
+            let resultD=numOneD/numTwoD;
+            document.getElementById("resultD").value=resultD;
+            document.getElementById('jsPlay').style.borderColor="aquamarine"
+        }
+        const Table=(n)=>{
+            let tableNumber=document.getElementById('tableNumber').value;
+                for(let i=1;i<=10;i++){
+                    let n=(i*3);
+                    let list=i+" * "+i+" = "+n+",";
+                    document.getElementById('tableDisplay').innerText+=n+"-";
+                }
+            }
+
+
+    </script>
+</body>
+</html>
