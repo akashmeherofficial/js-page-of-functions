@@ -1,1 +1,1 @@
-# js-page-of-functions.github.io
+https://akashmeherofficial.github.io/js-page-of-functions/
